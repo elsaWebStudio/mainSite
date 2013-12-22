@@ -1,0 +1,124 @@
+body{
+margin:0;
+padding:0;
+font-family: 'Roboto Slab', serif;
+background-color:#ffffcc;
+}
+
+#nav{
+width:100%;
+height:100px;
+background-color:#333333;
+position:fixed;
+top:0;
+left:0;
+}
+
+#home{
+background:url(spaceBlur.jpg);
+background-size: cover;
+background-repeat:repeat;
+background-attachment:fixed;
+width:100%;
+height:1000px;
+
+}
+
+#fancy{
+background:url(fancy.jpg);
+background-size: 1920px 1200px;
+background-repeat:repeat;
+background-attachment:fixed;
+width:100%;
+
+}
+
+#about{
+background:url(rise.jpg);
+background-size: cover;
+background-repeat:repeat;
+background-attachment:fixed;
+width:100%;
+height:1000px;
+
+opacity:0;
+}
+
+@-webkit-keyframes outerGlow {
+0% { -webkit-box-shadow:0 0 0px #993366;}
+50% { -webkit-box-shadow:0 0 100px #993366;}
+100% { -webkit-box-shadow:0 0 0px #993366;}
+}
+
+.elsa{
+font-size:70px;
+font-weight:700;
+color:white;
+background:url(space.jpg);
+background-size: 1500px 1100px;
+background-repeat:no-repeat;
+background-attachment:fixed;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.largeFancy{
+font-size:70px;
+font-weight:700;
+color:black;
+background:url(fancy.jpg);
+background-size: 1920px 1200px;
+background-repeat:no-repeat;
+background-attachment:fixed;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.largeFancy:hover{
+-webkit-animation: grow 2s infinite; 
+}
+
+@-webkit-keyframes grow {
+0% { width:550px; height:200px; font-size:75px;}
+50% { width:1000px; height:400px; font-size:140px;}
+100% { width:550px; height:200px; font-size:75px;}
+}
+
+#center{
+width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+#center:hover{
+-webkit-animation: grow 2s infinite; 
+margin-left:auto;
+margin-right:auto;
+}
+
+#cover{
+width:100%;
+height:92px;
+background-color:white;
+}
+
+#inner{
+text-align:center;
+margin:0px auto;
+}
+
+section{
+	position:relative;
+	z-index: 2;
+}
+
+footer{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	height:200px;
+	background-color:black;
+	color:white;
+	z-index: 1;
+}
