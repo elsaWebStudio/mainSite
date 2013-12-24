@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>elsa</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100,300' rel='stylesheet' type='text/css'>
+	<link href="dist/css/bootstrap.css" rel="stylesheet">
+	<link href="dist/css/customCSS.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="dist/js/customJavascript.js"></script>
+	
+</head>
+<body>
+	<div id="top"></div>
+	<nav class="navbar navbar-default navbar-fixed-top bottomShadow" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="elsaLogo" href="#top">ELSA</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul id="rightSideNavLinks" class="nav navbar-nav navbar-right">
+				<li><a href="#about">about</a></li>
+				<li><a href="#services">services</a></li>
+				<li><a href="#gallery">gallery</a></li>
+				<li><a href="#contact">contact</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<div class="jumbotron" data-type="background" data-speed="3">
+		<div class="container">
+			<h1>Hello, world!</h1>
+		</div>
+	</div>
+
+	<div id="about" class="container topShadow">
+		<h1>about</h1>
+	</div>
+
+	<div id="services" class="container">
+		<h1>services</h1>
+	</div>
+
+	<div id="gallery" class="container">
+		<h1>gallery</h1>
+	</div>
+
+	<div id="contact" class="container bottomShadow">
+		<h1>contact</h1>
+	</div>
+	<footer>
+		<div>
+			<a href="#top" class="footerLinkStyle">home</a>
+			<a href="#about" class="footerLinkStyle">about</a>
+			<a href="#gallery" class="footerLinkStyle">gallery</a>
+			<a href="#contact" class="footerLinkStyle">contact</a>
+		</div>
+	</footer>
+
+	<script>
+	$('h1').bind('inview', function(event, visible) {
+		if (visible) {
+			$(this).stop().animate({ opacity: 1 });
+		} else {
+			$(this).stop().animate({ opacity: 0 });
+		}
+	});
+	</script>
+
+</body>
+
+</html>
