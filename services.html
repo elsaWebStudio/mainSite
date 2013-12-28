@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>elsa</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100,300' rel='stylesheet' type='text/css'>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/customCSS.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/customJavascript.js"></script>
+</head>
+<body>
+	<div id="nav">
+		<nav class="navbar navbar-default navbar-fixed-top bottomShadow" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="elsaLogo" href="#nav">ELSA</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="navLinkPositioning" class="nav navbar-nav">
+					<li><a href="home.html">about</a></li>
+					<li><a href="#services">services</a></li>
+					<li><a href="gallery.html">gallery</a></li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</div>
+
+	<div id="services" class="container bottomShadow">
+		<h1>services</h1>
+	</div>
+
+	<div id="footer">
+		<footer>
+			<a href="#top" class="footerLinkStyle">home</a>
+			<a href="services.html" class="footerLinkStyle">services</a>
+			<a href="gallery.html" class="footerLinkStyle">gallery</a>
+			<a href="contact.html" class="footerLinkStyle">contact</a>
+		</footer>
+	</div>
+
+	<script>
+		$('h1').bind('inview', function(event, visible) {
+			if (visible) {
+				$(this).stop().animate({ opacity: 1 });
+			} else {
+				$(this).stop().animate({ opacity: 0 });
+			}
+		});
+	</script>
+
+</body><!-- Comment by Andrew -->
+</html>

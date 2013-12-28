@@ -6,35 +6,34 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/customCSS.css" rel="stylesheet">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/customJavascript.js"></script>
-	
 </head>
 <body>
-	<div id="top"></div>
-	<nav class="navbar navbar-default navbar-fixed-top bottomShadow" role="navigation">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="elsaLogo" href="#top">ELSA</a>
-		</div>
+	<div id="nav">
+		<nav class="navbar navbar-default navbar-fixed-top bottomShadow" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="elsaLogo" href="#nav">elsa</a>
+			</div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul id="rightSideNavLinks" class="nav navbar-nav navbar-right">
-				<li><a href="#about">about</a></li>
-				<li><a href="#services">services</a></li>
-				<li><a href="#gallery">gallery</a></li>
-				<li><a href="#contact">contact</a></li>
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</nav>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="navLinkPositioning" class="nav navbar-nav">
+					<li><a href="#about">about</a></li>
+					<li><a href="services.html">services</a></li>
+					<li><a href="gallery.html">gallery</a></li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</div>
 
 	<div class="jumbotron" data-type="background" data-speed="3">
 		<div class="container">
@@ -42,40 +41,30 @@
 		</div>
 	</div>
 
-	<div id="about" class="container topShadow">
+	<div id="about" class="container topAndBottomShadow">
 		<h1>about</h1>
 	</div>
 
-	<div id="services" class="container">
-		<h1>services</h1>
-	</div>
+	<div id="footer">
+		<footer>
 
-	<div id="gallery" class="container">
-		<h1>gallery</h1>
-	</div>
-
-	<div id="contact" class="container bottomShadow">
-		<h1>contact</h1>
-	</div>
-	<footer>
-		<div>
 			<a href="#top" class="footerLinkStyle">home</a>
-			<a href="#about" class="footerLinkStyle">about</a>
-			<a href="#gallery" class="footerLinkStyle">gallery</a>
-			<a href="#contact" class="footerLinkStyle">contact</a>
-		</div>
-	</footer>
+			<a href="services.html" class="footerLinkStyle">services</a>
+			<a href="gallery.html" class="footerLinkStyle">gallery</a>
+			<a href="contact.html" class="footerLinkStyle">contact</a>
+
+		</footer>
+	</div>
 
 	<script>
-	$('h1').bind('inview', function(event, visible) {
-		if (visible) {
-			$(this).stop().animate({ opacity: 1 });
-		} else {
-			$(this).stop().animate({ opacity: 0 });
-		}
-	});
+		$('h1').bind('inview', function(event, visible) {
+			if (visible) {
+				$(this).stop().animate({ opacity: 1 });
+			} else {
+				$(this).stop().animate({ opacity: 0 });
+			}
+		});
 	</script>
 
 </body><!-- Comment by Andrew -->
-
 </html>

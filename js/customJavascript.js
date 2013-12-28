@@ -3,39 +3,32 @@
 $(window).scroll(function(){
 	var $nav = $('nav');
 	var $elsa = $('.elsaLogo');
-	var $sideNav = $('#rightSideNavLinks');
-	var $jumbotron = $('.jumbotron');
+	var $sideNav = $('#navLinkPositioning');
 	var pos = ($window.scrollTop()/2);
 	var width = $(window).width();
 
 	if (width > 768){
 		if ($window.scrollTop() == 0){
-			$nav.css({height:'100px'});
-			$elsa.css({fontSize:'70px'});
-			$sideNav.css({paddingTop:'48px'});	
-		} else if ($window.scrollTop() > 0 && $window.scrollTop() < 100){
-			$nav.css({height:100-pos});
-			$elsa.css({fontSize:70-pos/1.4});	
-			$sideNav.css({paddingTop:48-pos});	
+			$nav.css({height:'75px'});
+			$elsa.css({fontSize:'57px'});
+			$sideNav.css({paddingTop:'30px'});	
+		} else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
+			$nav.css({height:75-pos});
+			$elsa.css({fontSize:57-pos/1.6});	
+			$sideNav.css({paddingTop:30-pos/1.4});	
 		} else {
 			$nav.css({height:'50px'});
 			$elsa.css({fontSize:'35px'});
-			$sideNav.css({paddingTop:'0px'});	
+			$sideNav.css({paddingTop:'5px'});	
 		}
 	}
 	else
 	{
 		$nav.css({height:'50px'});
 		$elsa.css({fontSize:'35px'});
-		$sideNav.css({paddingTop:'0px'});	
-		$jumbotron.css({marginTop:'48px'});
+		$sideNav.css({paddingTop:'5px'});	
 	}
-
-
-
 });
-
-
 
 //parallax effect for jumbotron
 $(document).ready(function(){
@@ -71,9 +64,9 @@ $(function() {
  *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
  *    - forked from http://github.com/zuk/jquery.inview/
  */
-(function ($) {
+ (function ($) {
   var inviewObjects = {}, viewportSize, viewportOffset,
-      d = document, w = window, documentElement = d.documentElement, expando = $.expando;
+  d = document, w = window, documentElement = d.documentElement, expando = $.expando;
 
   $.event.special.inview = {
     add: function(data) {
@@ -96,50 +89,50 @@ $(function() {
         domObject = mode === 'CSS1Compat' ?
           documentElement : // Standards
           d.body; // Quirks
-        size = {
-          height: domObject.clientHeight,
-          width:  domObject.clientWidth
-        };
+          size = {
+            height: domObject.clientHeight,
+            width:  domObject.clientWidth
+          };
+        }
       }
+
+      return size;
     }
 
-    return size;
-  }
+    function getViewportOffset() {
+      return {
+        top:  w.pageYOffset || documentElement.scrollTop   || d.body.scrollTop,
+        left: w.pageXOffset || documentElement.scrollLeft  || d.body.scrollLeft
+      };
+    }
 
-  function getViewportOffset() {
-    return {
-      top:  w.pageYOffset || documentElement.scrollTop   || d.body.scrollTop,
-      left: w.pageXOffset || documentElement.scrollLeft  || d.body.scrollLeft
-    };
-  }
+    function checkInView() {
+      var $elements = $(), elementsLength, i = 0;
 
-  function checkInView() {
-    var $elements = $(), elementsLength, i = 0;
+      $.each(inviewObjects, function(i, inviewObject) {
+        var selector  = inviewObject.data.selector,
+        $element  = inviewObject.$element;
+        $elements = $elements.add(selector ? $element.find(selector) : $element);
+      });
 
-    $.each(inviewObjects, function(i, inviewObject) {
-      var selector  = inviewObject.data.selector,
-          $element  = inviewObject.$element;
-      $elements = $elements.add(selector ? $element.find(selector) : $element);
-    });
+      elementsLength = $elements.length;
+      if (elementsLength) {
+        viewportSize   = viewportSize   || getViewportSize();
+        viewportOffset = viewportOffset || getViewportOffset();
 
-    elementsLength = $elements.length;
-    if (elementsLength) {
-      viewportSize   = viewportSize   || getViewportSize();
-      viewportOffset = viewportOffset || getViewportOffset();
-
-      for (; i<elementsLength; i++) {
+        for (; i<elementsLength; i++) {
         // Ignore elements that are not in the DOM tree
         if (!$.contains(documentElement, $elements[i])) {
           continue;
         }
 
         var $element      = $($elements[i]),
-            elementSize   = { height: $element.height(), width: $element.width() },
-            elementOffset = $element.offset(),
-            inView        = $element.data('inview'),
-            visiblePartX,
-            visiblePartY,
-            visiblePartsMerged;
+        elementSize   = { height: $element.height(), width: $element.width() },
+        elementOffset = $element.offset(),
+        inView        = $element.data('inview'),
+        visiblePartX,
+        visiblePartY,
+        visiblePartsMerged;
         
         // Don't ask me why because I haven't figured out yet:
         // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
@@ -151,30 +144,30 @@ $(function() {
         }
         
         if (elementOffset.top + elementSize.height > viewportOffset.top &&
-            elementOffset.top < viewportOffset.top + viewportSize.height &&
-            elementOffset.left + elementSize.width > viewportOffset.left &&
-            elementOffset.left < viewportOffset.left + viewportSize.width) {
+          elementOffset.top < viewportOffset.top + viewportSize.height &&
+          elementOffset.left + elementSize.width > viewportOffset.left &&
+          elementOffset.left < viewportOffset.left + viewportSize.width) {
           visiblePartX = (viewportOffset.left > elementOffset.left ?
             'right' : (viewportOffset.left + viewportSize.width) < (elementOffset.left + elementSize.width) ?
             'left' : 'both');
-          visiblePartY = (viewportOffset.top > elementOffset.top ?
-            'bottom' : (viewportOffset.top + viewportSize.height) < (elementOffset.top + elementSize.height) ?
-            'top' : 'both');
-          visiblePartsMerged = visiblePartX + "-" + visiblePartY;
-          if (!inView || inView !== visiblePartsMerged) {
-            $element.data('inview', visiblePartsMerged).trigger('inview', [true, visiblePartX, visiblePartY]);
-          }
-        } else if (inView) {
-          $element.data('inview', false).trigger('inview', [false]);
+        visiblePartY = (viewportOffset.top > elementOffset.top ?
+          'bottom' : (viewportOffset.top + viewportSize.height) < (elementOffset.top + elementSize.height) ?
+          'top' : 'both');
+        visiblePartsMerged = visiblePartX + "-" + visiblePartY;
+        if (!inView || inView !== visiblePartsMerged) {
+          $element.data('inview', visiblePartsMerged).trigger('inview', [true, visiblePartX, visiblePartY]);
         }
+      } else if (inView) {
+        $element.data('inview', false).trigger('inview', [false]);
       }
     }
   }
+}
 
-  $(w).bind("scroll resize", function() {
-    viewportSize = viewportOffset = null;
-  });
-  
+$(w).bind("scroll resize", function() {
+  viewportSize = viewportOffset = null;
+});
+
   // IE < 9 scrolls to focused elements without firing the "scroll" event
   if (!documentElement.addEventListener && documentElement.attachEvent) {
     documentElement.attachEvent("onfocusin", function() {

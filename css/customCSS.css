@@ -1,11 +1,12 @@
 /*HTML Section*/
 *, *:before, *:after {
-  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
 body{
 	font-family: 'Roboto Slab', serif;
-	height:3400px;
 	z-index:2;
+	line-height: normal;
 }
 
 footer{
@@ -25,14 +26,12 @@ h1{
 	font-weight: 100;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
-
 /*End HTML Section*/
 
 /*Custom Section*/
-
 .elsaLogo{
 	text-decoration:none;
-	font-size:70px;
+	font-size:35px;
 	font-weight:700;
 	color:#5966a3;
 }
@@ -83,34 +82,61 @@ h1{
 	z-index: 2;
 }
 
-#rightSideNavLinks{
-	padding-top: 48px;
+#navLinkPositioning{
+	padding-top: 5px;
 	margin-right: 5px;
 	background-color: white;
 }
 
+#footer{
+	height:200px;
+}
+
+#nav{
+	height:50px;
+}
+
 .bottomShadow{
-	box-shadow: 0px 2px 5px 0px #4e4e4e;
+	box-shadow: 0px .5px 5px 1px black;
 }
 
 .topShadow{
-	box-shadow: 0px -2px 5px 0px #4e4e4e;
+	box-shadow: 0px -.5px 5px 1px black;
 }
 
+.topAndBottomShadow{
+	box-shadow: 0px 0px 5px 1px black;
+}
+
+@media (min-width: 768px) {
+	#navLinkPositioning{
+		padding-top: 30px;
+		height: 25px;
+	}
+
+	#nav{
+		height:75px;
+	}
+
+	.elsaLogo{
+		text-decoration:none;
+		font-size:57px;
+		font-weight:700;
+		color:#5966a3;
+	}
+}
 /*End Custom Section*/
 
 /*Bootstrap Override Section*/
-
 .navbar-default{
-	height:100px;
+	height:75px;
 	border:none;
 	background-color: white;
 }
 
 .jumbotron{
 	height:400px;
-	margin-top:100px;
-	margin-bottom:0px;
+	margin:0px;
 	background:url(../assets/fancy.jpg) 0 repeat fixed;
 	color:white;
 	position: relative;
@@ -125,14 +151,21 @@ h1{
 	margin:0px;
 }
 
+.navbar-default{
+	height:50px;
+}
+
+@media (min-width: 768px) {
+	.navbar-default{
+		height:75px;
+	}
+}
 /*End Bootstrap Section*/
 
 /*Animation Section*/
-
 @-webkit-keyframes colorChange {
 	0% {color:#5966a3;}
 	50% {color:#323a5e;}
 	100% {color:#5966a3;}
 }
-
 /*End Animation Section*/
