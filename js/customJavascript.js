@@ -2,7 +2,7 @@
 //the width is less than 768px
 $(window).scroll(function(){
 	var $nav = $('nav');
-	var $elsa = $('.elsaLogo');
+	var $elsa = $('.navbar-header img');
 	var $sideNav = $('#navLinkPositioning');
 	var pos = ($window.scrollTop()/2);
 	var width = $(window).width();
@@ -10,24 +10,27 @@ $(window).scroll(function(){
 	if (width > 768){
 		if ($window.scrollTop() == 0){
 			$nav.css({height:'75px'});
-			$elsa.css({fontSize:'57px'});
-			$sideNav.css({paddingTop:'30px'});	
-		} else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
-			$nav.css({height:75-pos});
-			$elsa.css({fontSize:57-pos/1.6});	
-			$sideNav.css({paddingTop:30-pos/1.4});	
-		} else {
-			$nav.css({height:'50px'});
-			$elsa.css({fontSize:'35px'});
-			$sideNav.css({paddingTop:'5px'});	
-		}
-	}
-	else
-	{
-		$nav.css({height:'50px'});
-		$elsa.css({fontSize:'35px'});
-		$sideNav.css({paddingTop:'5px'});	
-	}
+			$elsa.css({marginTop:'0px'});
+      $elsa.css({marginBottom:'0px'});
+      $sideNav.css({paddingTop:'30px'});	
+    } else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
+     $nav.css({height:75-pos/1.5});
+     $elsa.css({marginTop:0-pos/1.6});	
+     $sideNav.css({paddingTop:30-pos/1.6});	
+   } else {
+     $nav.css({height:'50px'});
+     $elsa.css({marginTop:'-23px'});
+     $elsa.css({marginBottom:'-2px'});
+     $sideNav.css({paddingTop:'5px'});	
+   }
+ }
+ else
+ {
+  $nav.css({height:'50px'});
+  $elsa.css({marginTop:'-23px'});
+  $elsa.css({marginBottom:'-2px'});
+  $sideNav.css({paddingTop:'5px'}); 
+}
 });
 
 //parallax effect for jumbotron
