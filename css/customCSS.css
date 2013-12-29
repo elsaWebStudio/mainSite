@@ -4,7 +4,7 @@
 }
 
 body{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	z-index:2;
 	line-height: normal;
 }
@@ -22,7 +22,7 @@ footer{
 }
 
 h1{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 100;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
@@ -42,7 +42,7 @@ h1{
 }
 
 .footerLinkStyle{
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-decoration:none;
 	color:white;
 	font-size:32px;
@@ -95,11 +95,13 @@ h1{
 #nav{
 	height:50px;
 	overflow: hidden;
+	font-weight: 700;
 }
 
 .navbar-header img {
-	margin-top: -23px;
-	margin-bottom: -2px;
+	/*margin-top: -23px;
+	margin-bottom: -2px;*/
+	height:50px;
 }
 
 .bottomShadow{
@@ -139,6 +141,7 @@ h1{
 	.navbar-header img {
 		margin-top: 0px;
 		margin-bottom: 0px;
+		height: 100px;
 	}
 }
 /*End Custom Section*/

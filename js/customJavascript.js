@@ -10,25 +10,23 @@ $(window).scroll(function(){
 	if (width > 768){
 		if ($window.scrollTop() == 0){
 			$nav.css({height:'75px'});
-			$elsa.css({marginTop:'0px'});
-      $elsa.css({marginBottom:'0px'});
+			$elsa.css({height:'100px'});
       $sideNav.css({paddingTop:'30px'});	
     } else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
      $nav.css({height:75-pos/1.5});
-     $elsa.css({marginTop:0-pos/1.6});	
+     $elsa.css({height:100-pos/1.6});	
      $sideNav.css({paddingTop:30-pos/1.6});	
    } else {
      $nav.css({height:'50px'});
-     $elsa.css({marginTop:'-23px'});
-     $elsa.css({marginBottom:'-2px'});
+     $elsa.css({height:'75px'});
      $sideNav.css({paddingTop:'5px'});	
    }
  }
  else
  {
   $nav.css({height:'50px'});
-  $elsa.css({marginTop:'-23px'});
-  $elsa.css({marginBottom:'-2px'});
+  //$elsa.css({marginTop:'-23px'});
+  //$elsa.css({marginBottom:'-2px'});
   $sideNav.css({paddingTop:'5px'}); 
 }
 });
