@@ -86,6 +86,19 @@ h1{
 	padding-top: 5px;
 	margin-right: 5px;
 	background-color: white;
+
+}
+
+#navLinkPositioning a{
+	background-color:transparent;
+
+	-webkit-transition:background-color .25s;
+}
+
+#navLinkPositioning a:hover{
+	background-color:#5966a3;
+	color:white;
+
 }
 
 #footer{
@@ -119,8 +132,60 @@ h1{
 	box-shadow: 0 0px 5px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
 }
 
+.cube {
+	position: relative;
+	left:0px;
+	top:0px;
+	width:300px;
+	height:100px;
+}
+
+.cube:hover{
+
+}
+
+.center {
+	text-align: center;
+	position: absolute;
+	width:220px;
+	height:75px;
+	color:white;
+	font-size: 90px;
+	font-weight: 700;
+	background-color: #5966a3;
+}
+
+.center div{
+	margin-top: -20px;
+}
+
+.right {
+	position: absolute;
+	width:10px;
+	height:75px;
+	-webkit-transform: skewY(-45deg);
+	-moz-transform: skewY(-45deg);
+	background-color: #404a75;
+	left:220px;
+	bottom: 30px;
+}
+
+.top  {
+	position: absolute;
+	width:220px;
+	height:10px;
+	-webkit-transform: skewX(-45deg);
+	-moz-transform: skewX(-45deg);
+	background-color: #7685cc;
+	top:-10px;
+	left:5px;
+}
+
+
+
+
 /*Things inside the @media tag have a twin tag outside of the @media that size the minimized/phone version of the site.
-	Basically, if the screen is larger than 768px, then use these definitions, else use the other tag.*/
+Basically, if the screen is larger than 768px, then use these definitions, else use the other tag.*/
 @media (min-width: 768px) {
 	#navLinkPositioning{
 		padding-top: 30px;
@@ -193,5 +258,17 @@ h1{
 	50% {color:#323a5e;}
 	100% {color:#5966a3;}
 }
+
+@-webkit-keyframes linkColorChange {
+	0% {color:#777777; background-color: transparent;	
+		-webkit-box-shadow: none;
+		box-shadow: none; }
+		50% {color:white; background-color: #5966a3;	
+			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+			box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1); }
+			100% {color:#777777; background-color: transparent;	
+				-webkit-box-shadow: none;
+				box-shadow: none; }
+			}
 
 /*End Animation Section*/
