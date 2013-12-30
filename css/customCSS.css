@@ -15,7 +15,7 @@ footer{
 	left:0;
 	right:0;
 	height:200px;
-	background-image:url(../assets/patternBack.jpg);
+	background-image:url(../assets/footerBack.png);
 	background-color:black;
 	color:white;
 	z-index: 1;
@@ -90,15 +90,15 @@ h1{
 }
 
 #navLinkPositioning a{
+	font-weight: 400;
+	font-size:20px;
 	background-color:transparent;
-
 	-webkit-transition:background-color .25s;
 }
 
 #navLinkPositioning a:hover{
 	background-color:#5966a3;
 	color:white;
-
 }
 
 #footer{
@@ -112,8 +112,8 @@ h1{
 }
 
 .navbar-header img {
-	/*margin-top: -23px;
-	margin-bottom: -2px;*/
+	position:absolute;
+	z-index:200;
 	height:50px;
 }
 
@@ -130,29 +130,6 @@ h1{
 .topAndBottomShadow{
 	-webkit-box-shadow: 0 0px 5px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
 	box-shadow: 0 0px 5px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
-}
-
-.cube {
-	position: relative;
-	left:0px;
-	top:0px;
-	width:300px;
-	height:100px;
-}
-
-.cube:hover{
-
-}
-
-.center {
-	text-align: center;
-	position: absolute;
-	width:220px;
-	height:75px;
-	color:white;
-	font-size: 90px;
-	font-weight: 700;
-	background-color: #5966a3;
 }
 
 .center div{
@@ -260,13 +237,13 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 }
 
 @-webkit-keyframes linkColorChange {
-	0% {color:#777777; background-color: transparent;	
+	0% {color:#777777; background-color: transparent;
 		-webkit-box-shadow: none;
 		box-shadow: none; }
-		50% {color:white; background-color: #5966a3;	
+	50% {color:white; background-color: #5966a3;	
 			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
 			box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1); }
-			100% {color:#777777; background-color: transparent;	
+	100% {color:#777777; background-color: transparent;	
 				-webkit-box-shadow: none;
 				box-shadow: none; }
 			}

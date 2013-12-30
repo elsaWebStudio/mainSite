@@ -4,6 +4,7 @@ $(window).scroll(function(){
 	var $nav = $('nav');
 	var $elsa = $('.navbar-header img');
 	var $sideNav = $('#navLinkPositioning');
+  var $logoBack = $('#logoBackground');
 	var pos = ($window.scrollTop()/2);
 	var width = $(window).width();
 
@@ -11,15 +12,21 @@ $(window).scroll(function(){
 		if ($window.scrollTop() == 0){
 			$nav.css({height:'75px'});
 			$elsa.css({height:'100px'});
-      $sideNav.css({paddingTop:'30px'});	
+      $sideNav.css({paddingTop:'30px'});
+      $logoBack.css({height:'75px'}); 
+      $logoBack.css({width:'225px'});  	
     } else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
      $nav.css({height:75-pos/1.5});
      $elsa.css({height:100-pos/1.6});	
      $sideNav.css({paddingTop:30-pos/1.6});	
+     $logoBack.css({height:75-pos/1.6});
+     $logoBack.css({ width:225-pos*1.2});    
    } else {
      $nav.css({height:'50px'});
      $elsa.css({height:'75px'});
      $sideNav.css({paddingTop:'5px'});	
+     $logoBack.css({height:'55px'});
+     $logoBack.css({width:'170px'});    
    }
  }
  else
@@ -43,35 +50,6 @@ $(document).ready(function(){
 		});
 	});	
 }); 
-
-//goofy hover shift
-$(document).ready(function($){
-            $(".cube").mousemove(function(e){
-                var mouseX = e.pageX - $('.cube').offset().left;
-                var mouseY = e.pageY - $('.cube').offset().top;
-                var totalX = $('.cube').width();
-                var totalY = $('.cube').height();
-                var centerX = totalX / 2;
-                var centerY = totalY / 2;
-                var shiftX = centerX - mouseX;
-                var shiftY = centerY - mouseY;
-
-                /*var startX = ($('.cube').width() / 2) - ($('.center').width()/2);
-                var startY = ($('.cube').height() / 2) - ($('.center').height()/2);*/
-
-                $('.cube').css({ 'left': (shiftX/10) + 'px', 'top': (shiftY/10) + 'px' });
-                //$('.cube').css({ 'left': mouseX + 'px', 'top': mouseY + 'px' });
-
-
-                /*$('#image1').css('z-index') ;
-                $('#image1').css({ 'left': startX + (shiftX/10) + 'px', 'top': startY + (shiftY/10) + 'px' });
-                $('#image2').css({ 'left': startX + 220 + (shiftX/8) + 'px', 'top': startY + 50 + (shiftY/8) + 'px' });
-                $('#image3').css({ 'left': startX + 370 + (shiftX/6) + 'px', 'top': startY + 60 + (shiftY/6) + 'px' });
-                $('#image4').css({ 'left': startX - 100 + (shiftX/8) + 'px', 'top': startY + 50 + (shiftY/8) + 'px' });
-                $('#image5').css({ 'left': startX - 150 + (shiftX/6) + 'px', 'top': startY + 60 + (shiftY/6) + 'px' });*/
-            });
-        });
-
 
 //scrolling effect for links pointing to inner sections
 $(function() {
