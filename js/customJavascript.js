@@ -4,6 +4,7 @@ $(window).scroll(function(){
 	var $nav = $('nav');
 	var $elsa = $('.navbar-header img');
 	var $sideNav = $('#navLinkPositioning');
+  var $logoBack = $('#logoBackground');
 	var pos = ($window.scrollTop()/2);
 	var width = $(window).width();
 
@@ -11,15 +12,21 @@ $(window).scroll(function(){
 		if ($window.scrollTop() == 0){
 			$nav.css({height:'75px'});
 			$elsa.css({height:'100px'});
-      $sideNav.css({paddingTop:'30px'});	
+      $sideNav.css({paddingTop:'30px'});
+      $logoBack.css({height:'75px'}); 
+      $logoBack.css({width:'225px'});  	
     } else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
      $nav.css({height:75-pos/1.5});
      $elsa.css({height:100-pos/1.6});	
      $sideNav.css({paddingTop:30-pos/1.6});	
+     $logoBack.css({height:75-pos/1.6});
+     $logoBack.css({ width:225-pos*1.2});    
    } else {
      $nav.css({height:'50px'});
      $elsa.css({height:'75px'});
      $sideNav.css({paddingTop:'5px'});	
+     $logoBack.css({height:'55px'});
+     $logoBack.css({width:'170px'});    
    }
  }
  else
@@ -44,6 +51,7 @@ $(document).ready(function(){
 	});	
 }); 
 
+<<<<<<< HEAD
 //cube magic
 $(window).on('mousemove', function(event) {
   var width = $(window).width();
@@ -66,6 +74,8 @@ $(window).on('resize', resize);
 $(document).ready(resize);
 
 
+=======
+>>>>>>> e29c7b911783d4d0af82764413339a2482559d02
 //scrolling effect for links pointing to inner sections
 $(function() {
 	$('a[href*=#]:not([href=#])').click(function() {
