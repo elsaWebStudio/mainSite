@@ -44,33 +44,26 @@ $(document).ready(function(){
 	});	
 }); 
 
-//goofy hover shift
-$(document).ready(function($){
-            $(".cube").mousemove(function(e){
-                var mouseX = e.pageX - $('.cube').offset().left;
-                var mouseY = e.pageY - $('.cube').offset().top;
-                var totalX = $('.cube').width();
-                var totalY = $('.cube').height();
-                var centerX = totalX / 2;
-                var centerY = totalY / 2;
-                var shiftX = centerX - mouseX;
-                var shiftY = centerY - mouseY;
+//cube magic
+$(window).on('mousemove', function(event) {
+  var width = $(window).width();
+  var mouseX = event.pageX - (width * 0.5);
+  var height = $(window).height();
+  var mouseY = event.pageY - (height * 0.5);
+  var xAngle = (mouseY / height) * 90;
+  var yAngle = (mouseX / width) * 90;
 
-                /*var startX = ($('.cube').width() / 2) - ($('.center').width()/2);
-                var startY = ($('.cube').height() / 2) - ($('.center').height()/2);*/
+  $('.cube')[0].style.webkitTransform = "rotateX("+((xAngle/2)+45)+"deg) rotateY("+yAngle/5+"deg)";
+  
+});
 
-                $('.cube').css({ 'left': (shiftX/10) + 'px', 'top': (shiftY/10) + 'px' });
-                //$('.cube').css({ 'left': mouseX + 'px', 'top': mouseY + 'px' });
+function resize(event) {
+  var y = ($(window).height() - 240) * 0.5;
+  $('.cube').css('margin-top', y+'px');
+}
 
-
-                /*$('#image1').css('z-index') ;
-                $('#image1').css({ 'left': startX + (shiftX/10) + 'px', 'top': startY + (shiftY/10) + 'px' });
-                $('#image2').css({ 'left': startX + 220 + (shiftX/8) + 'px', 'top': startY + 50 + (shiftY/8) + 'px' });
-                $('#image3').css({ 'left': startX + 370 + (shiftX/6) + 'px', 'top': startY + 60 + (shiftY/6) + 'px' });
-                $('#image4').css({ 'left': startX - 100 + (shiftX/8) + 'px', 'top': startY + 50 + (shiftY/8) + 'px' });
-                $('#image5').css({ 'left': startX - 150 + (shiftX/6) + 'px', 'top': startY + 60 + (shiftY/6) + 'px' });*/
-            });
-        });
+$(window).on('resize', resize);
+$(document).ready(resize);
 
 
 //scrolling effect for links pointing to inner sections
