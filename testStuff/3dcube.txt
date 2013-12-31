@@ -1,0 +1,91 @@
+		<div class="cubeWrap" style="">
+			<div class="cube">
+				<div class="face one">one</div>
+				<div class="face two">two</div>
+				<div class="face three">three</div>
+				<div class="face four">four</div>
+				<div class="face five">five</div>
+				<div class="face six">six</div>
+			</div>
+		</div>
+	</div>
+
+
+.cubeWrap{
+	height:300px; 
+	width:300px;
+	  margin: 0 auto;
+}
+
+.cube {
+  position: relative;
+	height:300px; 
+	width:300px;
+
+  -webkit-transform-style: preserve-3d;
+}
+
+.face {
+  background-color: rgb(50, 50, 50);
+  position: absolute;
+}
+
+.cube .one  {
+		width:300px;
+	height:100px;
+  background-color: #404a75;
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+
+.cube .two {
+		width:300px;
+	height:100px;
+  background-color: #7685cc;
+  -webkit-transform: translateZ(50px);
+}
+
+.cube .three {
+		width:100px;
+	height:100px;
+  background-color: #404a75;
+  -webkit-transform: rotateY(90deg) translateZ(250px);
+}
+
+.cube .four {
+		width:300px;
+	height:100px;
+  background-color: #5966a3;
+  -webkit-transform: rotateY(180deg) translateZ(50px);
+}
+
+.cube .five {
+		width:100px;
+	height:100px;
+  background-color: #7685cc;
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+
+.cube .six {
+	width:300px;
+	height:100px;
+  background-color: #7685cc;
+  -webkit-transform: rotateX(-90deg) translateZ(50px) rotate(180deg);
+}
+
+
+//cube magic
+$(window).on('mousemove', function(event) {
+  var width = $(window).width();
+  var mouseX = event.pageX - (width * 0.5);
+  var height = $(window).height();
+  var mouseY = event.pageY - (height * 0.5);
+  var xAngle = (mouseY / height) * 90;
+  var yAngle = (mouseX / width) * 90;
+  $('.cube')[0].style.webkitTransform = "rotateX("+((xAngle/2)+45)+"deg) rotateY("+yAngle/5+"deg)";
+});
+function resize(event) {
+  var y = ($(window).height() - 240) * 0.5;
+  $('.cube').css('margin-top', y+'px');
+}
+$(window).on('resize', resize);
+$(document).ready(resize);
