@@ -51,31 +51,6 @@ $(document).ready(function(){
 	});	
 }); 
 
-<<<<<<< HEAD
-//cube magic
-$(window).on('mousemove', function(event) {
-  var width = $(window).width();
-  var mouseX = event.pageX - (width * 0.5);
-  var height = $(window).height();
-  var mouseY = event.pageY - (height * 0.5);
-  var xAngle = (mouseY / height) * 90;
-  var yAngle = (mouseX / width) * 90;
-
-  $('.cube')[0].style.webkitTransform = "rotateX("+((xAngle/2)+45)+"deg) rotateY("+yAngle/5+"deg)";
-  
-});
-
-function resize(event) {
-  var y = ($(window).height() - 240) * 0.5;
-  $('.cube').css('margin-top', y+'px');
-}
-
-$(window).on('resize', resize);
-$(document).ready(resize);
-
-
-=======
->>>>>>> e29c7b911783d4d0af82764413339a2482559d02
 //scrolling effect for links pointing to inner sections
 $(function() {
 	$('a[href*=#]:not([href=#])').click(function() {
