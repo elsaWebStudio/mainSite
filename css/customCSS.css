@@ -51,7 +51,7 @@ h1{
 }
 
 #about{
-	height: 700px; 
+	height: 1000px; 
 	width: 100%; 
 	padding-top:75px;
 	background-color:white;
@@ -141,6 +141,13 @@ h1{
 	z-index: -1;
 }
 
+.pulsingGlyphicon{
+	color:black;
+	font-size: 72px;
+	-webkit-animation: colorChange 2s infinite; 
+}
+
+
 /*Things inside the @media tag have a twin tag outside of the @media that size the minimized/phone version of the site.
 Basically, if the screen is larger than 768px, then use these definitions, else use the other tag.*/
 @media (min-width: 768px) {
@@ -181,9 +188,9 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 }
 
 .jumbotron{
-	height:775px;
 	margin:0px;
-	background:url(../assets/fancy.jpg) 0 repeat fixed;
+	height:775px;
+	background:url(../assets/fancyBack.png) 0 repeat fixed white;
 	color:white;
 	position: relative;
 	z-index: 2;
@@ -205,6 +212,13 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 	overflow: hidden;
 }
 
+.jumbotron h1,
+.jumbotron .h1 {
+  color: black;
+}
+
+
+
 @media (min-width: 768px) {
 
 }
@@ -213,9 +227,9 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 
 /*Animation Section*/
 @-webkit-keyframes colorChange {
-	0% {color:#5966a3;}
-	50% {color:#323a5e;}
-	100% {color:#5966a3;}
+	0% {color:black}
+	50% {color:gray;}
+	100% {color:black;}
 }
 
 @-webkit-keyframes linkColorChange {

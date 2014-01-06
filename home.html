@@ -49,7 +49,16 @@
 		</div><!-- /.navbar-collapse -->
 	</nav>
 	
-	<div class="jumbotron" data-type="background" data-speed="3"></div>
+	<div class="jumbotron" data-type="background" data-speed="3">
+
+			<div class="container">
+
+					<img src="assets/boxLogo.png" class="img-responsive center-block" alt="logo"/>
+					<h1 class="text-center">Your source to amazing websites at affordable prices.</h1>
+					<a href="#about"><span class="glyphicon glyphicon-chevron-down pulsingGlyphicon center-block"></span></a>
+			</div>
+
+	</div>
 	<div id="about" class="topAndBottomShadow">
 		<h1>
 			aboot
@@ -81,7 +90,7 @@
     		if ($window.scrollTop() <= height){
     			$nav.css({top:'-100px'});
     		} else if ($window.scrollTop() > height && $window.scrollTop() < height+100){
-    			$nav.css({top:-100+(pos-height)});
+    			$nav.css({top:pos-height-100});
     		} else {
     			$nav.css({top:'0px'});
     		}
