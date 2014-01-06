@@ -1,42 +1,26 @@
 //controls the navbar size as you scroll down. this is disabled when
 //the width is less than 768px
-$(window).scroll(function(){
-	var $nav = $('nav');
-	var $elsa = $('.navbar-header img');
-	var $sideNav = $('#navLinkPositioning');
-  var $logoBack = $('#logoBackground');
-	var pos = ($window.scrollTop()/2);
+/*$(window).scroll(function(){
+	var $nav = $('.navbar-default');
+  var height = $('.jumbotron').height()-100;
+
+	var pos = ($window.scrollTop());
 	var width = $(window).width();
 
 	if (width > 768){
-		if ($window.scrollTop() == 0){
-			$nav.css({height:'75px'});
-			$elsa.css({height:'100px'});
-      $sideNav.css({paddingTop:'30px'});
-      $logoBack.css({height:'75px'}); 
-      $logoBack.css({width:'225px'});  	
-    } else if ($window.scrollTop() > 0 && $window.scrollTop() < 75){
-     $nav.css({height:75-pos/1.5});
-     $elsa.css({height:100-pos/1.6});	
-     $sideNav.css({paddingTop:30-pos/1.6});	
-     $logoBack.css({height:75-pos/1.6});
-     $logoBack.css({ width:225-pos*1.2});    
+		if ($window.scrollTop() < height){
+			$nav.css({top:'-100px'});
+    } else if ($window.scrollTop() > height && $window.scrollTop() < height+100){
+     $nav.css({top:-100+(pos-height)});
    } else {
-     $nav.css({height:'50px'});
-     $elsa.css({height:'75px'});
-     $sideNav.css({paddingTop:'5px'});	
-     $logoBack.css({height:'55px'});
-     $logoBack.css({width:'170px'});    
+     $nav.css({top:'0px'});
    }
  }
  else
  {
-  $nav.css({height:'50px'});
-  //$elsa.css({marginTop:'-23px'});
-  //$elsa.css({marginBottom:'-2px'});
-  $sideNav.css({paddingTop:'5px'}); 
+  $nav.css({top:'0px'});
 }
-});
+});*/
 
 //parallax effect for jumbotron
 $(document).ready(function(){
@@ -51,7 +35,7 @@ $(document).ready(function(){
 	});	
 }); 
 
-//scrolling effect for links pointing to inner sections
+//scrolling effect for links pointing to sections on loaded page
 $(function() {
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -59,7 +43,7 @@ $(function() {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 			if (target.length) {
 				$('html,body').animate({
-					scrollTop: target.offset().top - 50
+					scrollTop: target.offset().top +10
 				}, 500);
 				return false;
 			}
@@ -67,7 +51,9 @@ $(function() {
 	});
 });
 
-/**
+/**This is the 'in view' loader. fades in when the user has the object in view/on screen. helper script needs
+ *to exist in the html (currently on home.html)
+ *
  * author Christopher Blum
  *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
  *    - forked from http://github.com/zuk/jquery.inview/
