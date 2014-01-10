@@ -147,6 +147,36 @@ h1{
 	-webkit-animation: colorChange 2s infinite; 
 }
 
+.fadeIn.start {
+
+    -webkit-animation: blurIn .5s;
+       -moz-animation: blurIn .5s;
+        -ms-animation: blurIn .5s;
+         -o-animation: blurIn .5s;
+            animation: blurIn .5s;
+}
+
+.fadeIn.stop {
+    -webkit-animation: blurOut .5s;
+       -moz-animation: blurOut .5s;
+        -ms-animation: blurOut .5s;
+         -o-animation: blurOut .5s;
+            animation: blurOut .5s;
+}
+
+.noTextDecor{
+text-decoration: none !important;
+}
+
+.bounce:hover{
+    -webkit-animation: bounce 1.5s infinite;
+       -moz-animation: bounce .5s infinite;
+        -ms-animation: bounce .5s infinite;
+         -o-animation: bounce .5s infinite;
+            animation: bounce .5s infinite;
+
+}
+
 
 /*Things inside the @media tag have a twin tag outside of the @media that size the minimized/phone version of the site.
 Basically, if the screen is larger than 768px, then use these definitions, else use the other tag.*/
@@ -232,16 +262,53 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 	100% {color:black;}
 }
 
+
+@-webkit-keyframes blurIn {
+	0% {-webkit-filter: blur(20px);  visibility:visible;}
+	100% {-webkit-filter: blur(0px); visibility:visible; }
+}
+
+@-webkit-keyframes blurOut {
+	0% {-webkit-filter: blur(0px); visibility:visible;}
+	100% {-webkit-filter: blur(20px); visibility:visible;}
+}
+
 @-webkit-keyframes linkColorChange {
 	0% {color:#777777; background-color: transparent;
 		-webkit-box-shadow: none;
 		box-shadow: none; }
-		50% {color:white; background-color: #5966a3;	
+	50% {color:white; background-color: #5966a3;	
 			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
 			box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1); }
-			100% {color:#777777; background-color: transparent;	
+	100% {color:#777777; background-color: transparent;	
 				-webkit-box-shadow: none;
 				box-shadow: none; }
-			}
+}
 
+.animated{
+-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1.5s;-moz-animation-duration:1.5s;-ms-animation-duration:1.5s;-o-animation-duration:1.5s;animation-duration:1.5s;}
+
+.animated.hinge{-webkit-animation-duration:1.5s;-moz-animation-duration:1.5s;-ms-animation-duration:1.5s;-o-animation-duration:1.5s;animation-duration:1.5s;}
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	40% {-webkit-transform: translateY(-30px);}
+	60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-30px);}
+	60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-30px);}
+	60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
 /*End Animation Section*/

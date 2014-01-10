@@ -55,12 +55,12 @@
 
 					<img src="assets/boxLogo.png" class="img-responsive center-block" alt="logo"/>
 					<h1 class="text-center">Your source to amazing websites at affordable prices.</h1>
-					<a href="#about"><span class="glyphicon glyphicon-chevron-down pulsingGlyphicon center-block"></span></a>
+					<a href="#about" class="noTextDecor"><span class="glyphicon glyphicon-chevron-down pulsingGlyphicon center-block bounce"></span></a>
 			</div>
 
 	</div>
 	<div id="about" class="topAndBottomShadow">
-		<h1>
+		<h1 class="fadeIn">
 			aboot
 		</h1>
 	</div>
@@ -68,17 +68,7 @@
 		<footer>
 			<a href="#top" class="footerLinkStyle">home</a> <a href="services.html" class="footerLinkStyle">services</a> <a href="gallery.html" class="footerLinkStyle">gallery</a> <a href="contact.html" class="footerLinkStyle">contact</a>
 		</footer>
-        </div><!-- This script is for making things fade in as they come into view on screen.
-        Just replace the 'h1' for a tag/class/id that you want -->
-        <script>
-        $('h1').bind('inview', function(event, visible) {
-        	if (visible) {
-        		$(this).stop().animate({ opacity: 1 });
-        	} else {
-        		$(this).stop().animate({ opacity: 0 });
-        	}
-        });
-    </script><!-- Comment by Andrew -->
+        </div>
     <script type="text/javascript">
     $(window).scroll(function(){
     	var $nav = $('.navbar-default');
