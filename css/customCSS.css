@@ -32,18 +32,22 @@ h1{
 /*Custom Section*/
 #intro{
 width:100%;
-
+margin-top: 65px;
 background-color: white;
 position:relative;
 	z-index: 2;
 }
 
-#intro #header{
-height:90px;
-width:190px;
-background: url(../assets/boxLogoStudios.png) no-repeat;
+#header{
+height:125px;
+width:1280px;
 background-size: contain;
-margin:10px auto 10px auto;
+margin:0px auto 10px auto;
+
+}
+
+.container h1{
+	text-align: center;
 
 }
 
@@ -223,6 +227,10 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 	.navbarHide{
 	top:-100px;
 }
+
+#intro{
+	margin-top: 0px;
+}
 }
 /*End Custom Section*/
 
@@ -236,8 +244,9 @@ Basically, if the screen is larger than 768px, then use these definitions, else 
 
 .jumbotron{
 	margin:0px;
-	height:500px;
-	background:url(../assets/fancyBack.png) 0 repeat fixed #b5bee9;
+	padding-top:0px;
+	height: 700px;
+	background:url(../assets/mars.jpg) 0 fixed #FF8A40;
 	color:white;
 	position: relative;
 	z-index: 2;
